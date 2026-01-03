@@ -1,59 +1,100 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+#Task Manager Application (Laravel)
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A simple and clean Task Manager web application built using Laravel that allows users to create, view, update, and manage tasks efficiently.
+This project follows proper MVC architecture, uses Laravel form validation, resource routing, and is deployed with a cloud MySQL database.
+It is also deployed online using Railway.
 
-## About Laravel
+#Live Demo
+Deployed Application:https://task-manager-laravel-production-8405.up.railway.app/
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+#Features
+Add new tasks
+Set task priority (Low / Medium / High)
+Track task status (Pending / Completed)
+Mark tasks as completed
+Persistent task storage using MySQL
+Clean and user-friendly interface
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+#Task Behavior
+Every new task is created with Pending status by default
+Tasks can later be marked as Completed
+Priority levels include Low, Medium, and High
+All task data is stored in a database
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+#Tech Stack
+Backend: Laravel (PHP)
+Frontend: Blade Templates, HTML, CSS
+Database: MySQL
+Local: XAMPP
+Production: Railway MySQL
+Deployment: Railway
+Version Control: Git & GitHub
 
-## Learning Laravel
+#Architecture
+This project follows the MVC (Model-View-Controller) pattern:
+Model: Task – Handles database operations
+View: Blade templates – Handles UI
+Controller: TaskController – Handles business logic
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+#Project Structure (Important Files)
+app/
+ └── Http/Controllers/TaskController.php
+app/
+ └── Models/Task.php
+database/
+ └── migrations/
+resources/
+ └── views/tasks/index.blade.php
+routes/
+ └── web.php
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+#Technical Expectations Covered
+*Proper MVC usage
+*Laravel form validation
+*Resource routing
+*Clean, readable, and maintainable code
 
-## Laravel Sponsors
+#Local Setup Instructions
+1️⃣ Clone the repository
+git clone https://github.com/Prapthigatty/task-manager-laravel.git
+cd task-manager-laravel
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+2️⃣ Install dependencies
+composer install
 
-### Premium Partners
+3️⃣ Create environment file
+cp .env.example .env
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+4️⃣ Generate application key
+php artisan key:generate
 
-## Contributing
+5️⃣ Configure database in .env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=task_manager
+DB_USERNAME=root
+DB_PASSWORD=
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+6️⃣ Run migrations
+php artisan migrate
 
-## Code of Conduct
+7️⃣ Start the server
+php artisan serve
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Visit  http://127.0.0.1:8000
 
-## Security Vulnerabilities
+#Deployment Details
+The application is deployed using Railway
+Uses Railway-hosted MySQL database
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+# Screenshots
 
-## License
+### Home Page
+![Home Page](screenshots/home.png)
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### Add Task Page
+![Add Task](screenshots/addtask.png)
+
+Author
+Prapthi A
